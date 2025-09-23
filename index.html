@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimson Circle - Find Your Study Squad at Alabama</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Landing Page Styles */
+        .landing-page {
+            display: block;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #9E1B32 0%, #C8102E 50%, #FFB81C 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: slideUp 1s ease-out 0.2s both;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: slideUp 1s ease-out 0.4s both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: #FFB81C;
+            color: #9E1B32;
+        }
+
+        .btn-primary:hover {
+            background: #FFA500;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-3px);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #9E1B32;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #9E1B32, #C8102E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #9E1B32;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #9E1B32;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #FFB81C;
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+        }
+
+        .footer .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFB81C;
+            margin-bottom: 1rem;
+        }
+
+        /* App Styles */
+        .app-container {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #9E1B32 0%, #C8102E 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        /* Auth Forms */
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+        }
+
+        .auth-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .auth-form h2 {
+            color: #9E1B32;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #9E1B32;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .success-message {
+            color: #28a745;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Main App Layout */
+        .app-main {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar h3 {
+            color: #9E1B32;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .nav-item {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-item:hover {
+            background: #f8f9fa;
+            transform: translateX(5px);
+        }
+
+        .nav-item.active {
+            background: #9E1B32;
+            color: white;
+        }
+
+        .main-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            min-height: 600px;
+        }
+
+        /* Study Groups */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #9E1B32;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .filter-group label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .filter-group select {
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .groups-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .group-card {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .group-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-color: #9E1B32;
+        }
+
+        .group-title {
+            color: #9E1B32;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .group-course {
+            background: #FFB81C;
+            color: #9E1B32;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .group-info {
+            margin-bottom: 15px;
+        }
+
+        .group-info div {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .group-description {
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .group-members {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .member-count {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .group-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .group-actions .btn {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        /* Group Chat */
+        .chat-container {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .message-author {
+            font-weight: bold;
+            color: #9E1B32;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 2px solid #e0e0e0;
+            background: white;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        .chat-input button {
+            padding: 10px 20px;
+            background: #9E1B32;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .benefits h2 {
+                font-size: 2rem;
+            }
+
+            .app-main {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .groups-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Back to landing button */
+        .back-to-landing {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-landing:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing-page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Crimson Circle</h1>
+                    <p class="tagline">Find Your "Circle" at Alabama</p>
+                    <p class="subtitle">Connect with classmates, form study groups, and ace your courses together.</p>
+                    
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="goToApp()">🚀 Launch App</button>
+                        <button class="btn btn-secondary" onclick="scrollToLearnMore()">📖 Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits" id="learnMore">
+            <div class="container">
+                <h2>Why Alabama Students Love Study Groups</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🤝</div>
+                        <h3>Find Your People</h3>
+                        <p>Connect with classmates who share your academic goals and study style. No more studying alone in the library!</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📚</div>
+                        <h3>Better Grades</h3>
+                        <p>Studies show students in study groups perform 20% better than solo studiers. Let's get that GPA up together!</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⏰</div>
+                        <h3>Easy Coordination</h3>
+                        <p>No more endless group texts trying to find a time that works. See available study sessions and join with one tap.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Stay Motivated</h3>
+                        <p>Accountability partners keep you on track. When your study buddies are counting on you, you'll show up ready to work.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌟</div>
+                        <h3>Make Friends</h3>
+                        <p>Turn classmates into friends. Some of your best college memories happen during late-night study sessions.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🏆</div>
+                        <h3>Alabama Exclusive</h3>
+                        <p>Built specifically for UA students, by UA students. We understand your courses, your campus, and your needs.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <button class="btn btn-primary" onclick="goToApp()" style="font-size: 1.2rem; padding: 20px 40px;">Ready to Get Started? Launch App! 🚀</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>38,000+</h3>
+                        <p>Students at Alabama</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>85%</h3>
+                        <p>Want study partners</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>20%</h3>
+                        <p>Grade improvement in groups</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1</h3>
+                        <p>Platform to connect them all</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="logo">Crimson Circle</div>
+                <p>Made with ❤️ by Alabama students, for Alabama students</p>
+                <p>&copy; 2025 Crimson Circle. Roll Tide! 🐘</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- App Section -->
+    <div id="appContainer" class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">🎓 Crimson Circle</div>
+            <div class="user-info" id="userInfo">
+                <button class="back-to-landing" onclick="goToLanding()">← Back to Home</button>
+                <span id="welcomeMessage">Welcome to Crimson Circle!</span>
+                <button class="btn btn-danger" onclick="logout()" id="logoutBtn" style="display: none;">Logout</button>
+            </div>
+        </header>
+
+        <!-- Auth Forms -->
+        <div id="authContainer" class="auth-container">
+            <!-- Login Form -->
+            <div class="auth-form" id="loginForm">
+                <h2>Welcome Back!</h2>
+                <form onsubmit="login(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Alabama Email</label>
+                        <input type="email" id="loginEmail" required placeholder="yourname@crimson.ua.edu">
+                        <div class="error-message" id="loginEmailError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                        <div class="error-message" id="loginPasswordError"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 15px;">Login</button>
+                    <p style="text-align: center;">
+                        Don't have an account? 
+                        <a href="#" onclick="showSignup()" style="color: #9E1B32; font-weight: bold;">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="auth-form hidden" id="signupForm">
+                <h2>Join Crimson Circle</h2>
+                <form onsubmit="signup(event)">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Alabama Email</label>
+                        <input type="email" id="signupEmail" required placeholder="yourname@crimson.ua.edu">
+                        <div class="error-message" id="signupEmailError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupMajor">Major</label>
+                        <input type="text" id="signupMajor" required placeholder="Computer Science">
+                    </div>
+                    <div class="form-group">
+                        <label for="signupYear">Year</label>
+                        <select id="signupYear" required>
+                            <option value="">Select Year</option>
+                            <option value="Freshman">Freshman</option>
+                            <option value="Sophomore">Sophomore</option>
+                            <option value="Junior">Junior</option>
+                            <option value="Senior">Senior</option>
+                            <option value="Graduate">Graduate Student</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 15px;">Create Account</button>
+                    <p style="text-align: center;">
+                        Already have an account? 
+                        <a href="#" onclick="showLogin()" style="color: #9E1B32; font-weight: bold;">Login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main App -->
+        <div id="mainApp" class="hidden">
+            <div class="app-main">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <h3>Navigation</h3>
+                    <div class="nav-item active" onclick="showSection('browse')" id="browseNav">
+                        <span>🔍</span> Browse Groups
+                    </div>
+                    <div class="nav-item" onclick="showSection('myGroups')" id="myGroupsNav">
+                        <span>👥</span> My Groups
+                    </div>
+                    <div class="nav-item" onclick="showSection('create')" id="createNav">
+                        <span>➕</span> Create Group
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <!-- Browse Groups Section -->
+                    <section id="browseSection">
+                        <div class="section-header">
+                            <h1 class="section-title">Browse Study Groups</h1>
+                        </div>
+                        
+                        <div class="filters">
+                            <div class="filter-group">
+                                <label>Course</label>
+                                <select id="courseFilter" onchange="filterGroups()">
+                                    <option value="">All Courses</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Meeting Time</label>
+                                <select id="timeFilter" onchange="filterGroups()">
+                                    <option value="">Any Time</option>
+                                    <option value="morning">Morning (6 AM - 12 PM)</option>
+                                    <option value="afternoon">Afternoon (12 PM - 6 PM)</option>
+                                    <option value="evening">Evening (6 PM - 12 AM)</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Location</label>
+                                <select id="locationFilter" onchange="filterGroups()">
+                                    <option value="">Any Location</option>
+                                    <option value="library">Library</option>
+                                    <option value="student center">Student Center</option>
+                                    <option value="online">Online</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="groups-grid" id="groupsGrid">
+                            <!-- Groups will be populated here -->
+                        </div>
+                    </section>
+
+                    <!-- My Groups Section -->
+                    <section id="myGroupsSection" class="hidden">
+                        <div class="section-header">
+                            <h1 class="section-title">My Study Groups</h1>
+                        </div>
+                        <div class="groups-grid" id="myGroupsGrid">
+                            <!-- User's groups will be populated here -->
+                        </div>
+                    </section>
+
+                    <!-- Create Group Section -->
+                    <section id="createSection" class="hidden">
+                        <div class="section-header">
+                            <h1 class="section-title">Create a Study Group</h1>
+                        </div>
+                        <form onsubmit="createGroup(event)" style="max-width: 600px;">
+                            <div class="form-group">
+                                <label for="groupTitle">Group Title</label>
+                                <input type="text" id="groupTitle" required placeholder="e.g., Calculus II Study Group">
+                            </div>
+                            <div class="form-group">
+                                <label for="groupCourse">Course</label>
+                                <input type="text" id="groupCourse" required placeholder="e.g., MATH 126 - Calculus II">
+                            </div>
+                            <div class="form-group">
+                                <label for="groupTime">Meeting Time</label>
+                                <input type="datetime-local" id="groupTime" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="groupLocation">Meeting Location</label>
+                                <input type="text" id="groupLocation" required placeholder="e.g., Gorgas Library Room 205">
+                            </div>
+                            <div class="form-group">
+                                <label for="groupDescription">Description</label>
+                                <textarea id="groupDescription" rows="4" placeholder="What will you study? What's your study style? Any specific topics?"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="groupSize">Max Group Size</label>
+                                <select id="groupSize" required>
+                                    <option value="2">2 people</option>
+                                    <option value="3">3 people</option>
+                                    <option value="4" selected>4 people</option>
+                                    <option value="5">5 people</option>
+                                    <option value="6">6 people</option>
+                                    <option value="8">8 people</option>
+                                    <option value="10">10 people</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Create Study Group</button>
+                        </form>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Group Details Modal -->
+    <div id="groupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalGroupTitle">Group Details</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalGroupContent">
+                <!-- Group details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // App State
+        let currentUser = null;
+        let studyGroups = [];
+        let currentSection = 'browse';
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSampleData();
+        });
+
+        // Navigation between landing and app
+        function goToApp() {
+            document.getElementById('landingPage').style.display = 'none';
+            document.getElementById('appContainer').style.display = 'block';
+            document.body.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+            checkAuthStatus();
+        }
+
+        function goToLanding() {
+            document.getElementById('landingPage').style.display = 'block';
+            document.getElementById('appContainer').style.display = 'none';
+            document.body.style.background = '';
+        }
+
+        function scrollToLearnMore() {
+            document.getElementById('learnMore').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Authentication Functions
+        function checkAuthStatus() {
+            const userData = localStorage.getItem('crimsonCircleUser');
+            if (userData) {
+                currentUser = JSON.parse(userData);
+                showMainApp();
+            }
+        }
+
+        function showLogin() {
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('signupForm').classList.add('hidden');
+        }
+
+        function showSignup() {
+            document.getElementById('signupForm').classList.remove('hidden');
+            document.getElementById('loginForm').classList.add('hidden');
+        }
+
+        function login(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Clear previous errors
+            document.getElementById('loginEmailError').textContent = '';
+            document.getElementById('loginPasswordError').textContent = '';
+
+            // Validate Alabama email
+            if (!email.includes('@ua.edu') && !email.includes('@crimson.ua.edu')) {
+                document.getElementById('loginEmailError').textContent = 'Please use your Alabama email address';
+                return;
+            }
+
+            // Simple auth simulation
+            const users = JSON.parse(localStorage.getItem('crimsonCircleUsers') || '[]');
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user) {
+                currentUser = user;
+                localStorage.setItem('crimsonCircleUser', JSON.stringify(user));
+                showMainApp();
+            } else {
+                document.getElementById('loginPasswordError').textContent = 'Invalid email or password';
+            }
+        }
+
+        function signup(event) {
+            event.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const major = document.getElementById('signupMajor').value;
+            const year = document.getElementById('signupYear').value;
+            const password = document.getElementById('signupPassword').value;
+
+            // Clear previous errors
+            document.getElementById('signupEmailError').textContent = '';
+
+            // Validate Alabama email
+            if (!email.includes('@ua.edu') && !email.includes('@crimson.ua.edu')) {
+                document.getElementById('signupEmailError').textContent = 'Please use your Alabama email address';
+                return;
+            }
+
+            // Check if user already exists
+            const users = JSON.parse(localStorage.getItem('crimsonCircleUsers') || '[]');
+            if (users.find(u => u.email === email)) {
+                document.getElementById('signupEmailError').textContent = 'Account with this email already exists';
+                return;
+            }
+
+            // Create new user
+            const newUser = {
+                id: Date.now(),
+                name,
+                email,
+                major,
+                year,
+                password,
+                joinedGroups: [],
+                createdGroups: []
+            };
+
+            users.push(newUser);
+            localStorage.setItem('crimsonCircleUsers', JSON.stringify(users));
+            
+            currentUser = newUser;
+            localStorage.setItem('crimsonCircleUser', JSON.stringify(newUser));
+            showMainApp();
+        }
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('crimsonCircleUser');
+            document.getElementById('authContainer').classList.remove('hidden');
+            document.getElementById('mainApp').classList.add('hidden');
+            showLogin();
+        }
+
+        function showMainApp() {
+            document.getElementById('authContainer').classList.add('hidden');
+            document.getElementById('mainApp').classList.remove('hidden');
+            document.getElementById('welcomeMessage').textContent = `Welcome, ${currentUser.name}!`;
+            document.getElementById('logoutBtn').style.display = 'block';
+            loadGroups();
+            loadMyGroups();
+            updateCourseFilter();
+        }
+
+        // Navigation
+        function showSection(section) {
+            // Hide all sections
+            document.getElementById('browseSection').classList.add('hidden');
+            document.getElementById('myGroupsSection').classList.add('hidden');
+            document.getElementById('createSection').classList.add('hidden');
+
+            // Remove active class from all nav items
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+
+            // Show selected section and activate nav
+            document.getElementById(section + 'Section').classList.remove('hidden');
+            document.getElementById(section + 'Nav').classList.add('active');
+            
+            currentSection = section;
+        }
+
+        // Study Groups Functions
+        function loadSampleData() {
+            // Load sample study groups if none exist
+            const savedGroups = localStorage.getItem('crimsonCircleGroups');
+            if (!savedGroups) {
+                const sampleGroups = [
+                    {
+                        id: 1,
+                        title: "Calculus II Study Session",
+                        course: "MATH 126 - Calculus II",
+                        time: "2025-09-25T15:00",
+                        location: "Gorgas Library Room 205",
+                        description: "Working through integration techniques and preparing for midterm. Looking for dedicated students who want to work through practice problems together.",
+                        maxSize: 4,
+                        creator: {
+                            name: "Sarah Johnson",
+                            email: "sarah.j@crimson.ua.edu"
+                        },
+                        members: [
+                            { name: "Sarah Johnson", email: "sarah.j@crimson.ua.edu" },
+                            { name: "Mike Chen", email: "mchen@ua.edu" }
+                        ],
+                        messages: [
+                            {
+                                author: "Sarah Johnson",
+                                message: "Hey everyone! Looking forward to studying together. I'll bring my textbook and some practice problems.",
+                                timestamp: new Date().toISOString()
+                            }
+                        ]
+                    },
+                    {
+                        id: 2,
+                        title: "Organic Chemistry Help",
+                        course: "CH 231 - Organic Chemistry I",
+                        time: "2025-09-24T18:00",
+                        location: "Student Center Study Room 3",
+                        description: "Struggling with reaction mechanisms? Let's work through them together! Bring your molecular model kits.",
+                        maxSize: 3,
+                        creator: {
+                            name: "Alex Rodriguez",
+                            email: "arodriguez@ua.edu"
+                        },
+                        members: [
+                            { name: "Alex Rodriguez", email: "arodriguez@ua.edu" }
+                        ],
+                        messages: []
+                    },
+                    {
+                        id: 3,
+                        title: "CS Data Structures Final Prep",
+                        course: "CS 201 - Data Structures",
+                        time: "2025-09-26T14:00",
+                        location: "Engineering Building Lab",
+                        description: "Final exam prep focusing on trees, graphs, and algorithms. We'll code together and explain concepts to each other.",
+                        maxSize: 5,
+                        creator: {
+                            name: "Jamie Parker",
+                            email: "jparker@crimson.ua.edu"
+                        },
+                        members: [
+                            { name: "Jamie Parker", email: "jparker@crimson.ua.edu" },
+                            { name: "David Kim", email: "dkim@ua.edu" },
+                            { name: "Lisa Wang", email: "lwang@crimson.ua.edu" }
+                        ],
+                        messages: [
+                            {
+                                author: "Jamie Parker",
+                                message: "I've prepared some practice problems on binary trees. Should be fun!",
+                                timestamp: new Date().toISOString()
+                            },
+                            {
+                                author: "David Kim",
+                                message: "Great! I'll bring my notes on graph algorithms.",
+                                timestamp: new Date().toISOString()
+                            }
+                        ]
+                    }
+                ];
+                localStorage.setItem('crimsonCircleGroups', JSON.stringify(sampleGroups));
+            }
+            studyGroups = JSON.parse(localStorage.getItem('crimsonCircleGroups') || '[]');
+        }
+
+        function loadGroups() {
+            const groupsGrid = document.getElementById('groupsGrid');
+            groupsGrid.innerHTML = '';
+
+            studyGroups.forEach(group => {
+                const groupCard = createGroupCard(group);
+                groupsGrid.appendChild(groupCard);
+            });
+        }
+
+        function loadMyGroups() {
+            const myGroupsGrid = document.getElementById('myGroupsGrid');
+            myGroupsGrid.innerHTML = '';
+
+            if (!currentUser) return;
+
+            const myGroups = studyGroups.filter(group => 
+                group.members.some(member => member.email === currentUser.email)
+            );
+
+            if (myGroups.length === 0) {
+                myGroupsGrid.innerHTML = '<p style="text-align: center; color: #666; grid-column: 1/-1;">You haven\'t joined any groups yet. <a href="#" onclick="showSection(\'browse\')" style="color: #9E1B32;">Browse groups</a> to get started!</p>';
+                return;
+            }
+
+            myGroups.forEach(group => {
+                const groupCard = createGroupCard(group, true);
+                myGroupsGrid.appendChild(groupCard);
+            });
+        }
+
+        function createGroupCard(group, isMyGroup = false) {
+            const card = document.createElement('div');
+            card.className = 'group-card';
+            
+            const timeStr = new Date(group.time).toLocaleString();
+            const isJoined = currentUser && group.members.some(member => member.email === currentUser.email);
+            const isFull = group.members.length >= group.maxSize;
+            
+            card.innerHTML = `
+                <div class="group-title">${group.title}</div>
+                <div class="group-course">${group.course}</div>
+                <div class="group-info">
+                    <div><span>🕐</span> ${timeStr}</div>
+                    <div><span>📍</span> ${group.location}</div>
+                    <div><span>👤</span> Created by ${group.creator.name}</div>
+                </div>
+                <div class="group-description">${group.description}</div>
+                <div class="group-members">
+                    <span class="member-count">${group.members.length}/${group.maxSize} members</span>
+                </div>
+                <div class="group-actions">
+                    <button class="btn btn-secondary" onclick="viewGroup(${group.id})">View Details</button>
+                    ${!isJoined && !isFull ? 
+                        `<button class="btn btn-primary" onclick="joinGroup(${group.id})">Join Group</button>` :
+                        isJoined ? 
+                        `<button class="btn btn-danger" onclick="leaveGroup(${group.id})">Leave Group</button>` :
+                        `<button class="btn btn-secondary" disabled>Group Full</button>`
+                    }
+                </div>
+            `;
+            
+            return card;
+        }
+
+        function createGroup(event) {
+            event.preventDefault();
+            
+            const title = document.getElementById('groupTitle').value;
+            const course = document.getElementById('groupCourse').value;
+            const time = document.getElementById('groupTime').value;
+            const location = document.getElementById('groupLocation').value;
+            const description = document.getElementById('groupDescription').value;
+            const maxSize = parseInt(document.getElementById('groupSize').value);
+
+            const newGroup = {
+                id: Date.now(),
+                title,
+                course,
+                time,
+                location,
+                description,
+                maxSize,
+                creator: {
+                    name: currentUser.name,
+                    email: currentUser.email
+                },
+                members: [{
+                    name: currentUser.name,
+                    email: currentUser.email
+                }],
+                messages: []
+            };
+
+            studyGroups.push(newGroup);
+            localStorage.setItem('crimsonCircleGroups', JSON.stringify(studyGroups));
+            
+            // Clear form
+            event.target.reset();
+            
+            // Show success and redirect
+            alert('Study group created successfully!');
+            showSection('myGroups');
+            loadGroups();
+            loadMyGroups();
+            updateCourseFilter();
+        }
+
+        function joinGroup(groupId) {
+            const group = studyGroups.find(g => g.id === groupId);
+            if (!group || !currentUser) return;
+
+            if (group.members.length >= group.maxSize) {
+                alert('This group is already full!');
+                return;
+            }
+
+            if (group.members.some(member => member.email === currentUser.email)) {
+                alert('You are already a member of this group!');
+                return;
+            }
+
+            group.members.push({
+                name: currentUser.name,
+                email: currentUser.email
+            });
+
+            localStorage.setItem('crimsonCircleGroups', JSON.stringify(studyGroups));
+            loadGroups();
+            loadMyGroups();
+            
+            alert(`Successfully joined "${group.title}"!`);
+        }
+
+        function leaveGroup(groupId) {
+            const group = studyGroups.find(g => g.id === groupId);
+            if (!group || !currentUser) return;
+
+            if (!confirm('Are you sure you want to leave this group?')) return;
+
+            group.members = group.members.filter(member => member.email !== currentUser.email);
+            
+            // If creator leaves and there are other members, transfer ownership
+            if (group.creator.email === currentUser.email && group.members.length > 0) {
+                group.creator = group.members[0];
+                alert('Group ownership transferred to ' + group.members[0].name);
+            }
+            
+            // If no members left, delete the group
+            if (group.members.length === 0) {
+                studyGroups = studyGroups.filter(g => g.id !== groupId);
+                alert('Group was deleted as it had no remaining members.');
+            }
+
+            localStorage.setItem('crimsonCircleGroups', JSON.stringify(studyGroups));
+            loadGroups();
+            loadMyGroups();
+        }
+
+        function viewGroup(groupId) {
+            const group = studyGroups.find(g => g.id === groupId);
+            if (!group) return;
+
+            const modal = document.getElementById('groupModal');
+            const title = document.getElementById('modalGroupTitle');
+            const content = document.getElementById('modalGroupContent');
+
+            title.textContent = group.title;
+
+            const timeStr = new Date(group.time).toLocaleString();
+            const isJoined = currentUser && group.members.some(member => member.email === currentUser.email);
+            
+            content.innerHTML = `
+                <div class="group-course" style="margin-bottom: 20px;">${group.course}</div>
+                
+                <div class="group-info" style="margin-bottom: 25px;">
+                    <div style="margin-bottom: 10px;"><strong>🕐 When:</strong> ${timeStr}</div>
+                    <div style="margin-bottom: 10px;"><strong>📍 Where:</strong> ${group.location}</div>
+                    <div style="margin-bottom: 10px;"><strong>👤 Created by:</strong> ${group.creator.name}</div>
+                    <div><strong>👥 Members:</strong> ${group.members.length}/${group.maxSize}</div>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <strong>Description:</strong>
+                    <p style="margin-top: 10px; line-height: 1.6; color: #555;">${group.description}</p>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <strong>Members:</strong>
+                    <div style="margin-top: 10px;">
+                        ${group.members.map(member => `
+                            <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>${member.name}</span>
+                                ${member.email === group.creator.email ? '<span style="background: #FFB81C; color: #9E1B32; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: bold;">Creator</span>' : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                ${isJoined ? `
+                    <div style="margin-bottom: 25px;">
+                        <strong>Group Chat:</strong>
+                        <div class="chat-container" style="margin-top: 10px;">
+                            <div class="chat-messages" id="chatMessages-${group.id}">
+                                ${group.messages.length === 0 ? 
+                                    '<p style="text-align: center; color: #666; padding: 20px;">No messages yet. Be the first to say hello!</p>' :
+                                    group.messages.map(msg => `
+                                        <div class="message">
+                                            <div class="message-header">
+                                                <span class="message-author">${msg.author}</span>
+                                                <span>${new Date(msg.timestamp).toLocaleString()}</span>
+                                            </div>
+                                            <div>${msg.message}</div>
+                                        </div>
+                                    `).join('')
+                                }
+                            </div>
+                            <div class="chat-input">
+                                <input type="text" placeholder="Type your message..." id="messageInput-${group.id}" onkeypress="if(event.key==='Enter') sendMessage(${group.id})">
+                                <button onclick="sendMessage(${group.id})">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                ` : ''}
+
+                <div style="text-align: center; margin-top: 25px;">
+                    ${!isJoined && group.members.length < group.maxSize ? 
+                        `<button class="btn btn-primary" onclick="joinGroup(${group.id}); closeModal(); loadGroups(); loadMyGroups();" style="margin-right: 10px;">Join This Group</button>` :
+                        isJoined ? 
+                        `<button class="btn btn-danger" onclick="leaveGroup(${group.id}); closeModal();">Leave Group</button>` :
+                        `<span style="color: #666;">This group is currently full</span>`
+                    }
+                </div>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        function sendMessage(groupId) {
+            const group = studyGroups.find(g => g.id === groupId);
+            const input = document.getElementById(`messageInput-${groupId}`);
+            const message = input.value.trim();
+
+            if (!message || !group || !currentUser) return;
+
+            const newMessage = {
+                author: currentUser.name,
+                message: message,
+                timestamp: new Date().toISOString()
+            };
+
+            group.messages.push(newMessage);
+            localStorage.setItem('crimsonCircleGroups', JSON.stringify(studyGroups));
+
+            // Clear input
+            input.value = '';
+
+            // Refresh chat display
+            const chatContainer = document.getElementById(`chatMessages-${groupId}`);
+            chatContainer.innerHTML += `
+                <div class="message">
+                    <div class="message-header">
+                        <span class="message-author">${newMessage.author}</span>
+                        <span>${new Date(newMessage.timestamp).toLocaleString()}</span>
+                    </div>
+                    <div>${newMessage.message}</div>
+                </div>
+            `;
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function closeModal() {
+            document.getElementById('groupModal').style.display = 'none';
+        }
+
+        // Filters
+        function updateCourseFilter() {
+            const courseFilter = document.getElementById('courseFilter');
+            const courses = [...new Set(studyGroups.map(group => group.course))];
+            
+            courseFilter.innerHTML = '<option value="">All Courses</option>';
+            courses.forEach(course => {
+                const option = document.createElement('option');
+                option.value = course;
+                option.textContent = course;
+                courseFilter.appendChild(option);
+            });
+        }
+
+        function filterGroups() {
+            const courseFilter = document.getElementById('courseFilter').value;
+            const timeFilter = document.getElementById('timeFilter').value;
+            const locationFilter = document.getElementById('locationFilter').value;
+
+            let filteredGroups = studyGroups;
+
+            if (courseFilter) {
+                filteredGroups = filteredGroups.filter(group => group.course === courseFilter);
+            }
+
+            if (timeFilter) {
+                filteredGroups = filteredGroups.filter(group => {
+                    const groupTime = new Date(group.time);
+                    const hours = groupTime.getHours();
+                    
+                    switch(timeFilter) {
+                        case 'morning':
+                            return hours >= 6 && hours < 12;
+                        case 'afternoon':
+                            return hours >= 12 && hours < 18;
+                        case 'evening':
+                            return hours >= 18 || hours < 6;
+                        default:
+                            return true;
+                    }
+                });
+            }
+
+            if (locationFilter) {
+                filteredGroups = filteredGroups.filter(group => 
+                    group.location.toLowerCase().includes(locationFilter.toLowerCase())
+                );
+            }
+
+            // Update display
+            const groupsGrid = document.getElementById('groupsGrid');
+            groupsGrid.innerHTML = '';
+
+            if (filteredGroups.length === 0) {
+                groupsGrid.innerHTML = '<p style="text-align: center; color: #666; grid-column: 1/-1;">No groups match your filters. Try adjusting your search criteria.</p>';
+                return;
+            }
+
+            filteredGroups.forEach(group => {
+                const groupCard = createGroupCard(group);
+                groupsGrid.appendChild(groupCard);
+            });
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('groupModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
